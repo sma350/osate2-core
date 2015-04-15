@@ -30,6 +30,7 @@ public class WriteToFile {
 	String fileExtension;
 	Boolean saved = false;
 	String suffix = null;
+	IFile prismFile;
 
 	public WriteToFile(String reporttype, EObject root) {
 		reportType = reporttype;
@@ -164,6 +165,7 @@ public class WriteToFile {
 						AadlUtil.makeSureFoldersExist(path);
 						file.create(input, true, null);
 					}
+					prismFile = file;
 				} catch (final CoreException e) {
 				}
 			}
@@ -171,4 +173,8 @@ public class WriteToFile {
 		saved = true;
 	}
 
+	public IFile getFile()
+	{
+		return prismFile;
+	}
 }

@@ -420,15 +420,16 @@ public class AadlExamplesWizard extends AadlProjectWizard {
 					File destFolder;
 
 					projectPath = newProject.getLocation();
-					exampleName = exampleFile.getParentFile().toPath().getFileName().toString();
-					OsateDebug.osateDebug("AadlExamplesWizard", "exampleName=" + exampleName);
-
-					destFolder = new File(projectPath.toString() + IPath.SEPARATOR + exampleName);
-
-					OsateDebug.osateDebug("AadlExamplesWizard", "new folder" + destFolder.toString());
-
-					FileUtils.copyFile(exampleFile, destFolder);
-
+					
+					//Error method toPath undefined
+//					exampleName = exampleFile.getParentFile().toPath().getFileName().toString();
+//					OsateDebug.osateDebug("AadlExamplesWizard", "exampleName=" + exampleName);
+//
+//					destFolder = new File(projectPath.toString() + IPath.SEPARATOR + exampleName);
+//					OsateDebug.osateDebug("AadlExamplesWizard", "new folder" + destFolder.toString());
+//
+//					FileUtils.copyFile(exampleFile, destFolder);
+//
 					newProject.refreshLocal(2, null);
 				}
 			} catch (Exception e) {
